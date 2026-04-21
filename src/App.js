@@ -1,22 +1,20 @@
-import React from "react";
-// TODO: Import BrowserRouter, Routes, Route from react-router-dom
-
-import Navbar from "./components/Navbar";
-// TODO: Import pages (Dashboard, Profile, Settings)
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar'; // Adjust path if necessary
+import Dashboard from './pages/Dashboard';
+import Profile from './pages/Profile';
+import Settings from './pages/Settings';
 
 function App() {
   return (
-    <div>
-      {/* TODO: Wrap the application with BrowserRouter */}
-
+    <Router>
       <Navbar />
-
-      {/* TODO: Replace this with Routes
-           "/" → Dashboard
-           "/profile" → Profile
-           "/settings" → Settings
-      */}
-    </div>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/settings" element={<Route path="/settings" element={<Settings />} />} />
+      </Routes>
+    </Router>
   );
 }
 
